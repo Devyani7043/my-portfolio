@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Devyani Charlevar – Laravel Developer | PHP | REST APIs | MySQL & PostgreSQL</title>
+<meta name="description" content="Devyani Charlevar is a Laravel developer in Ahmedabad, India with 3+ years of experience building scalable PHP web applications, REST APIs and database-driven systems.">
+<meta property="og:title" content="Devyani Charlevar – Laravel Developer">
+<meta property="og:description" content="Building scalable web applications with Laravel & PHP.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛠️%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a1024;--bg2:#0f1733;--card:#131c3d;--line:#25305c;
+  --text:#e8ecfb;--muted:#a3accb;--blue:#5b8cff;--purple:#9a6bff;
+  --grad:linear-gradient(120deg,#5b8cff,#9a6bff);
+  --head:"Bricolage Grotesque",system-ui,sans-serif;--body:"Figtree",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.65 var(--body);
+  background-image:radial-gradient(60rem 30rem at 85% -5%,rgba(154,107,255,.18),transparent 60%),radial-gradient(50rem 30rem at -10% 25%,rgba(91,140,255,.14),transparent 60%);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#06102b;padding:8px 14px;border-radius:8px;z-index:100}.skip:focus{left:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:700;margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 44px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:600;border:1px solid var(--line);transition:transform .2s,background .2s,border-color .2s;cursor:pointer;font-family:inherit;font-size:1rem;color:var(--text);background:transparent}
+.btn:hover{transform:translateY(-2px);border-color:var(--blue)}
+.btn.pri{background:var(--grad);border-color:transparent;color:#06102b}
+.btn.pri:hover{filter:brightness(1.1)}
+/* nav */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,16,36,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--head);font-weight:800;font-size:1.2rem}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:28px;align-items:center;list-style:none;margin:0;padding:0}
+.links a{color:var(--muted);font-weight:500;transition:color .2s}.links a:hover,.links a.on{color:var(--text)}
+.links .btn{padding:8px 18px;color:#06102b}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+/* hero */
+.hero{padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);font-weight:800;margin-bottom:22px}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:52ch;margin:0 0 32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;color:var(--muted);font-size:.95rem}
+.meta span{padding:6px 12px;border:1px solid var(--line);border-radius:999px}
+.stage{position:relative}
+.avatar{position:absolute;top:-34px;right:-6px;width:104px;height:104px;border-radius:50%;background:var(--grad);padding:3px;z-index:2;box-shadow:0 12px 40px rgba(91,140,255,.35)}
+.avatar div{width:100%;height:100%;border-radius:50%;background:var(--bg2);display:grid;place-items:center;font:800 1.6rem var(--head);color:var(--muted)}
+.code{background:var(--bg2);border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden}
+.code .bar{display:flex;gap:7px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);font:500 .78rem var(--mono);color:var(--muted)}
+.code .bar i{width:10px;height:10px;border-radius:50%;background:#2a3566}
+.code pre{margin:0;padding:20px;font:400 .82rem/1.75 var(--mono);overflow-x:auto;color:#cdd6f6}
+.k{color:#b392ff}.f{color:#7aa7ff}.s{color:#8ad7b0}.c{color:#66729f}
+.cur{display:inline-block;width:7px;height:1em;background:var(--blue);vertical-align:-2px;animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+/* about */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:48px}
+.about p{color:var(--muted);margin:0 0 18px}
+.facts{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:26px;align-self:start}
+.facts dl{margin:0;display:grid;gap:16px}.facts dt{font-size:.85rem;color:var(--muted)}.facts dd{margin:2px 0 0;font-weight:600}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:#3b4a88;transform:translateY(-3px)}
+.card h3{font-size:1.1rem;margin-bottom:14px}
+.card.core{grid-column:1/-1;background:linear-gradient(135deg,#17224c,#1b1648);border-color:#3b4a88}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{font-size:.88rem;padding:5px 12px;border-radius:999px;background:rgba(91,140,255,.1);border:1px solid rgba(91,140,255,.25);color:#cbd8ff}
+.core .tags li{font-size:1rem;padding:8px 18px;font-weight:600;background:rgba(154,107,255,.16);border-color:rgba(154,107,255,.45)}
+/* timeline */
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 30px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--blue),var(--purple),transparent)}
+.tl li{position:relative;padding-bottom:34px}
+.tl li::before{content:"";position:absolute;left:-30px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
+.tl li:first-child::before{background:var(--purple);border-color:var(--purple);box-shadow:0 0 0 6px rgba(154,107,255,.2)}
+.tl time{font:500 .85rem var(--mono);color:var(--muted)}
+.tl h3{font-size:1.25rem;margin:4px 0 2px}.tl .co{color:#b9c6ff;font-weight:600}
+.tl p{color:var(--muted);margin:8px 0 0;max-width:65ch}
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:130px;position:relative;display:flex;align-items:flex-end;padding:14px 18px;background:linear-gradient(135deg,hsl(var(--h) 70% 30%),hsl(calc(var(--h) + 50) 65% 18%));overflow:hidden}
+.thumb::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 22px),repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 22px)}
+.thumb svg{position:absolute;right:16px;top:14px;width:46px;height:46px;stroke:#fff;fill:none;stroke-width:1.6;opacity:.85}
+.thumb span{position:relative;font:500 .78rem var(--mono);color:#fff;background:rgba(6,16,43,.55);padding:3px 10px;border-radius:6px}
+.proj .body{padding:22px;display:flex;flex-direction:column;gap:14px;flex:1}
+.proj h3{font-size:1.15rem}.proj p{margin:0;color:var(--muted);font-size:.98rem}
+.proj .tags{margin-top:auto}
+.proj .tags li{font-size:.8rem;padding:3px 10px}
+.note{margin-top:26px;color:var(--muted);font-size:.92rem}
+/* what */
+.what{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.what div{padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
+.what h3{font-size:1.1rem;margin-bottom:6px}.what p{margin:0;color:var(--muted);font-size:.98rem}
+/* edu */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.edu time{font:500 .85rem var(--mono);color:var(--muted)}.edu h3{font-size:1.15rem;margin:6px 0 4px}.edu p{margin:0;color:var(--muted)}
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+.cl{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:14px}
+.cl small{display:block;color:var(--muted)}.cl a{font-weight:600;word-break:break-word}.cl a:hover{color:#b9c6ff}
+form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,textarea{font:inherit;color:var(--text);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,textarea:focus{outline:2px solid var(--blue);border-color:transparent}
+textarea{min-height:130px;resize:vertical}
+.msg{min-height:1.4em;font-size:.92rem;color:#8ad7b0;margin:0}.msg.err{color:#ff9aa8}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer strong{color:var(--text)}footer a:hover{color:var(--text)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+  section{padding:68px 0}
+  .hero .wrap,.about,.contact{grid-template-columns:1fr}
+  .avatar{right:12px}
+  .burger{display:block}
+  .links{position:absolute;top:68px;left:0;right:0;background:var(--bg2);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}.links li{padding:10px 0}.links .btn{justify-content:center;margin-top:8px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap"><nav aria-label="Main">
+    <a class="logo" href="#top">Devyani<span>.dev</span></a>
+    <button class="burger" aria-expanded="false" aria-controls="links">Menu</button>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+      <li><a class="btn pri" href="#contact">Hire Me</a></li>
+    </ul>
+  </nav></div>
+</header>
+
+<main id="main">
+<section class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Building scalable web applications with <em>Laravel &amp; PHP</em></h1>
+    <p>I’m Devyani Charlevar, a Laravel developer with 3+ years of experience building REST APIs, multi-role platforms and database-driven applications, based in Ahmedabad, India.</p>
+    <div class="cta"><a class="btn pri" href="#projects">View My Projects</a><a class="btn" href="#contact">Contact Me</a></div>
+    <div class="meta"><span>Laravel</span><span>PHP</span><span>REST APIs</span><span>MySQL &amp; PostgreSQL</span></div>
+  </div>
+  <div class="stage">
+    <div class="avatar" role="img" aria-label="Profile photo placeholder"><div>DC</div></div>
+    <div class="code" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i>&nbsp; routes/api.php</div>
+<pre><span class="c">// multi-role API, versioned</span>
+<span class="f">Route</span>::<span class="f">prefix</span>(<span class="s">'v1'</span>)
+  -&gt;<span class="f">middleware</span>(<span class="s">'auth:sanctum'</span>)
+  -&gt;<span class="f">group</span>(<span class="k">function</span> () {
+    <span class="f">Route</span>::<span class="f">apiResource</span>(
+      <span class="s">'jobs'</span>, <span class="f">JobController</span>::<span class="k">class</span>
+    );
+    <span class="f">Route</span>::<span class="f">get</span>(<span class="s">'applications'</span>,
+      [<span class="f">ApplicationController</span>::<span class="k">class</span>, <span class="s">'index'</span>]
+    );
+});<span class="cur"></span></pre>
+    </div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap rv">
+  <h2>About me</h2>
+  <div class="about">
+    <div>
+      <p>I’m a Laravel developer with 3+ years of experience, working on backend development across job portals, healthcare, industrial and rental platforms.</p>
+      <p>My work centres on clean MVC code, third-party API integration and database design and query optimization. I’ve built multi-role applications where patients, doctors, employers and administrators each need their own experience.</p>
+      <p>I enjoy working in agile teams, reviewing code together and keeping applications maintainable long after launch.</p>
+    </div>
+    <aside class="facts"><dl>
+      <div><dt>Location</dt><dd>Ahmedabad, Gujarat, India</dd></div>
+      <div><dt>Focus</dt><dd>Backend, APIs, databases</dd></div>
+      <div><dt>Education</dt><dd>BCA, Gujarat University</dd></div>
+    </dl></aside>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap rv">
+  <h2>Technical skills</h2>
+  <p class="lead">The tools I use day to day, grouped by where they fit.</p>
+  <div class="skills">
+    <div class="card core"><h3>Core stack</h3><ul class="tags"><li>Laravel</li><li>PHP</li><li>REST APIs</li><li>MySQL</li><li>PostgreSQL</li></ul></div>
+    <div class="card"><h3>Backend</h3><ul class="tags"><li>MVC Architecture</li><li>OOP</li><li>Third-Party API Integration</li><li>Unit Testing</li></ul></div>
+    <div class="card"><h3>Database</h3><ul class="tags"><li>Database Design</li><li>Query Optimization</li></ul></div>
+    <div class="card"><h3>Frontend</h3><ul class="tags"><li>JavaScript</li><li>jQuery</li><li>AJAX</li><li>HTML5</li><li>CSS</li><li>Bootstrap 5</li><li>Blade Templates</li></ul></div>
+    <div class="card"><h3>Tools &amp; workflow</h3><ul class="tags"><li>Git</li><li>Postman</li><li>CI/CD</li><li>Agile Development</li></ul></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap rv">
+  <h2>Experience</h2>
+  <p class="lead">Four roles in Laravel and PHP development, newest first.</p>
+  <ol class="tl">
+    <li><time>July 2025 – October 2026</time><h3>Backend Developer – Laravel</h3><div class="co">Ncode Technologies Inc</div><p>Backend development with Laravel. <!-- Add 2–3 responsibilities from your CV --></p></li>
+    <li><time>January 2025 – April 2025</time><h3>Backend Developer – Shopify &amp; Laravel</h3><div class="co">Metizsoft Solutions</div><p>Backend development across Shopify and Laravel projects. <!-- Add responsibilities --></p></li>
+    <li><time>September 2023 – November 2024</time><h3>Laravel Developer</h3><div class="co">BM Coder Technologies</div><p>Laravel application development. <!-- Add responsibilities --></p></li>
+    <li><time>December 2022 – September 2023</time><h3>Junior Laravel Developer</h3><div class="co">Vindaloo Softech Pvt Ltd</div><p>Started my career building Laravel applications. <!-- Add responsibilities --></p></li>
+  </ol>
+</div></section>
+
+<section id="projects"><div class="wrap rv">
+  <h2>Featured projects</h2>
+  <p class="lead">Seven projects I’ve worked on, from job portals to industrial dashboards.</p>
+  <div class="grid">
+    <article class="card proj"><div class="thumb" style="--h:225"><svg viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="26" rx="4"/><path d="M18 14v-4h12v4M6 26h36"/></svg><span>jobs · multilingual</span></div><div class="body"><h3>JobPro.ch &amp; Publinites</h3><p>Multilingual job portals with employer and job-seeker dashboards and applicant tracking.</p><ul class="tags"><li>Laravel</li><li>MySQL</li><li>REST APIs</li></ul></div></article>
+    <article class="card proj"><div class="thumb" style="--h:170"><svg viewBox="0 0 48 48"><path d="M24 8v32M8 24h32"/><rect x="6" y="6" width="36" height="36" rx="8"/></svg><span>jobs · pharma</span></div><div class="body"><h3>PharmaPro.fr</h3><p>Pharmaceutical job board with employer and candidate management.</p><ul class="tags"><li>Laravel</li><li>MySQL</li></ul></div></article>
+    <article class="card proj"><div class="thumb" style="--h:265"><svg viewBox="0 0 48 48"><path d="M8 30l4-12h24l4 12v8H8z"/><circle cx="16" cy="38" r="3"/><circle cx="32" cy="38" r="3"/></svg><span>rentals · payments</span></div><div class="body"><h3>Car Rental Management System</h3><p>Vehicle booking, rent-to-buy functionality, payment tracking, inventory and contract management.</p><ul class="tags"><li>Laravel</li><li>MySQL</li><li>Payments</li></ul></div></article>
+    <article class="card proj"><div class="thumb" style="--h:195"><svg viewBox="0 0 48 48"><path d="M4 26h10l4-10 6 20 5-14 3 4h12"/></svg><span>healthcare · roles</span></div><div class="body"><h3>Continence Clinic System</h3><p>Multi-role medical platform for patients, doctors and clinic centers.</p><ul class="tags"><li>Laravel</li><li>Role-based access</li></ul></div></article>
+    <article class="card proj"><div class="thumb" style="--h:245"><svg viewBox="0 0 48 48"><path d="M6 40V8M6 40h36M12 32l9-9 7 5 12-14"/></svg><span>monitoring · alerts</span></div><div class="body"><h3>SigmaControl System</h3><p>Industrial monitoring dashboards, real-time data visualization, threshold-based alerts and role-based access.</p><ul class="tags"><li>Laravel</li><li>Dashboards</li><li>Alerts</li></ul></div></article>
+    <article class="card proj"><div class="thumb" style="--h:150"><svg viewBox="0 0 48 48"><path d="M24 42V20M24 28c-8 0-12-4-12-12 8 0 12 4 12 12zM24 24c0-8 4-12 12-12 0 8-4 12-12 12z"/></svg><span>agri · planning</span></div><div class="body"><h3>Agricultural Platform</h3><p>Crop planning, farm inventory and expense reporting.</p><ul class="tags"><li>Laravel</li><li>MySQL</li><li>Reporting</li></ul></div></article>
+    <article class="card proj"><div class="thumb" style="--h:290"><svg viewBox="0 0 48 48"><rect x="6" y="6" width="14" height="14" rx="2"/><rect x="28" y="6" width="14" height="14" rx="2"/><rect x="6" y="28" width="14" height="14" rx="2"/><path d="M28 28h6v6M42 28v14h-8"/></svg><span>qr · analytics</span></div><div class="body"><h3>QR Code Builder</h3><p>Custom-branded QR code generation and scan analytics.</p><ul class="tags"><li>Laravel</li><li>Analytics</li></ul></div></article>
+  </div>
+  <p class="note">These were built for clients, so there are no public links. Happy to talk through any of them.</p>
+</div></section>
+
+<section id="what"><div class="wrap rv">
+  <h2>What I do</h2>
+  <p class="lead">Where I can help your team.</p>
+  <div class="what">
+    <div><h3>Laravel backend development</h3><p>Maintainable MVC applications built around clear business logic.</p></div>
+    <div><h3>REST API development</h3><p>Well-structured endpoints, tested with Postman.</p></div>
+    <div><h3>Database design &amp; optimization</h3><p>Schemas and queries for MySQL and PostgreSQL.</p></div>
+    <div><h3>Third-party integrations</h3><p>Connecting payment, e-commerce and external services.</p></div>
+    <div><h3>Multi-role systems</h3><p>Separate dashboards and permissions for each type of user.</p></div>
+    <div><h3>Application maintenance</h3><p>Fixes, upgrades and improvements to live applications.</p></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap rv">
+  <h2>Education</h2>
+  <div class="edu" style="margin-top:28px">
+    <div class="card"><time>2019 – 2022</time><h3>Bachelor of Computer Application (BCA)</h3><p>Gujarat University</p></div>
+    <div class="card"><time>2019</time><h3>H.S.C. Commerce</h3><p>H.B. Kapadia High School</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap rv contact">
+  <div>
+    <h2>Let’s work together</h2>
+    <p class="lead" style="margin-bottom:28px">I’m open to Laravel and PHP developer roles. Send a message and I’ll reply.</p>
+    <ul class="cl">
+      <li><small>Email</small><a href="mailto:devyanicharlevar8@gmail.com">devyanicharlevar8@gmail.com</a></li>
+      <li><small>Phone</small><a href="tel:+917043875608">+91 7043875608</a></li>
+      <li><small>Location</small>Ahmedabad, Gujarat, India</li>
+      <li><small>LinkedIn</small><a href="https://linkedin.com/in/devyani-charlevar-b3033a24a" target="_blank" rel="noopener">linkedin.com/in/devyani-charlevar-b3033a24a</a></li>
+    </ul>
+    <a class="btn pri" href="mailto:devyanicharlevar8@gmail.com?subject=Job%20opportunity">Email me about a role</a>
+  </div>
+  <form id="f" novalidate>
+    <label>Name<input name="name" autocomplete="name" required></label>
+    <label>Email<input name="email" type="email" autocomplete="email" required></label>
+    <label>Message<textarea name="message" required></textarea></label>
+    <button class="btn pri" type="submit">Send message</button>
+    <p class="msg" id="m" role="status"></p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><strong>Devyani Charlevar</strong> · Laravel Developer | PHP | RESTful APIs | MySQL &amp; PostgreSQL</div>
+  <div><a href="https://linkedin.com/in/devyani-charlevar-b3033a24a" target="_blank" rel="noopener">LinkedIn</a> · © <span id="y">2026</span> Devyani Charlevar</div>
+</div></footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'),l=document.getElementById('links');
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.closest('a')){l.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+    els.forEach(function(e){io.observe(e)});
+  }else els.forEach(function(e){e.classList.add('in')});
+  var secs=document.querySelectorAll('main section[id]'),links=document.querySelectorAll('.links a[href^="#"]');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120,cur='';
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur&&!a.classList.contains('btn'))});
+  },{passive:true});
+  // Contact form: opens the visitor's mail app (no server needed). In Laravel, post to a route instead.
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,m=document.getElementById('m'),n=f.name.value.trim(),em=f.email.value.trim(),t=f.message.value.trim();
+    if(!n||!/^\S+@\S+\.\S+$/.test(em)||!t){m.className='msg err';m.textContent='Please add your name, a valid email and a message.';return}
+    m.className='msg';m.textContent='Opening your email app…';
+    location.href='mailto:devyanicharlevar8@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(t+'\n\n'+n+' ('+em+')');
+  });
+})();
+</script>
+</body>
+</html>
